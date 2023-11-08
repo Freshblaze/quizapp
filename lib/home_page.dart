@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({required this.startquiz, super.key});
+  final Function() startquiz;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +38,9 @@ class HomePage extends StatelessWidget {
                 color: Colors.white,
                 size: 30.0,
               ),
-              onPressed: () {},
+              onPressed: startquiz,
               label: const Text(
-                'Start quiz',
+                'Start Quiz',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
