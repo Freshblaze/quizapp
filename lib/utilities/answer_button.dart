@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class AnserButton extends StatelessWidget {
-  const AnserButton({super.key});
+  const AnserButton({required this.tex, required this.onPress, super.key});
+  final String tex;
+  final Function() onPress;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        elevation: const MaterialStatePropertyAll(10),
+        minimumSize: const MaterialStatePropertyAll(
+          Size(double.infinity, 20),
+        ),
         shape: MaterialStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.0),
@@ -17,9 +23,9 @@ class AnserButton extends StatelessWidget {
           EdgeInsets.all(15),
         ),
       ),
-      onPressed: () {},
-      child: const Text(
-        'A Ui framework',
+      onPressed: onPress,
+      child: Text(
+        tex,
       ),
     );
   }
